@@ -14,8 +14,10 @@ Start window:
 ![image](https://github.com/user-attachments/assets/db25c451-85ba-4e6a-82e8-3ffec6fff30e)
 
 Update port list:
+
   Before refresh:
   ![image](https://github.com/user-attachments/assets/be600259-1b89-4632-babd-762ff67c9e10)
+  
   After refresh:
   ![image](https://github.com/user-attachments/assets/3566dc74-d77b-4fc2-8621-56b8f13e4e64)
 
