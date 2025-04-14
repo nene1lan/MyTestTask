@@ -5,8 +5,6 @@
 #include <QMainWindow>
 #include <QtSerialPort/QSerialPortInfo>
 
-#include <QDebug>
-
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
