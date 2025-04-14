@@ -24,7 +24,6 @@ public:
 private slots:
     void on_pushButton_clicked();
     void on_pushButton_5_clicked();
-    void onConnectionStatusChanged(bool connected);
 
     void on_pushButton_reset_clicked();
     void on_pushButton_readADD_clicked();

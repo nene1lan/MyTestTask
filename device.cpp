@@ -2,7 +2,7 @@
 #include "device.h"
 #include <QByteArray>
 
-// #include <QDebug>
+#include <QDebug>
 
 device::device(QObject *parent) : QObject(parent)
 {

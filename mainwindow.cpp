@@ -5,7 +5,7 @@
 #include <QMainWindow>
 #include <QtSerialPort/QSerialPortInfo>
 
-// #include <QDebug>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -35,15 +35,11 @@ void MainWindow::on_pushButton_clicked()
     if (dev->connectToPort(selectedPort)) {
         ui->label_2->setText("Connected to " + selectedPort);
         ui->label_2->setStyleSheet("color: green;");
-        ui->plainTextEdit_2->insertPlainText("Connected to ");
-        ui->plainTextEdit_2->insertPlainText(selectedPort);
-        ui->plainTextEdit_2->insertPlainText("\n");
+        ui->plainTextEdit_2->insertPlainText("Connected to " + selectedPort + "\n");
     } else {
         ui->label_2->setText("Connection failed!");
         ui->label_2->setStyleSheet("color: red;");
-        ui->plainTextEdit_2->insertPlainText ("Connection to ");
-        ui->plainTextEdit_2->insertPlainText(selectedPort);
-        ui->plainTextEdit_2->insertPlainText(" failed.\n");
+        ui->plainTextEdit_2->insertPlainText("Connection to " + selectedPort + " failed.\n");
     }
 }
 
@@ -51,15 +47,6 @@ void MainWindow::on_pushButton_5_clicked()
 {
     updatePortList();
     ui->plainTextEdit_2->insertPlainText("Port list refreshed.\n");
-}
-
-void MainWindow::onConnectionStatusChanged(bool connected)
-{
-    QString status = connected ? "Connected" : "Disconnected";
-    QString color = connected ? "green" : "red";
-
-    ui->label_2->setText(status);
-    ui->label_2->setStyleSheet("color: " + color + ";");
 }
 
 void MainWindow::on_pushButton_reset_clicked(){
@@ -72,11 +59,8 @@ void MainWindow::on_pushButton_readADD_clicked()
 {
     QByteArray response = dev->readADD();
 
-    ui->plainTextEdit_2->insertPlainText (response.toHex(' ') + "\n");
-
     if (!response.isEmpty()) {
-
-
+        ui->plainTextEdit_2->insertPlainText (response.toHex(' ') + "\n");
     } else {
         ui->plainTextEdit_2->insertPlainText("An error occured.\n");
     }
